@@ -3,7 +3,7 @@ This repository aims to help you learn how to process data in order to use mg2ve
 
 ## Method
 
-![DataMaker](/Users/idealist/Documents/DataMaker.svg)
+![DataMaker](DataMaker.svg)
 
 ### 1. What data we should prepare
 
