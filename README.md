@@ -3,6 +3,8 @@ This repository aims to help you learn how to process data in order to use mg2ve
 
 ## Method
 
+![DataMaker](DataMaker.svg)
+
 ### 1. What data we should prepare
 
 All we need to prepare is only a file to describe the topological structure of our graph following the format like the dblp.lg (what has been prepared in the Datasets Folder). For details, please visit https://www.yfang.site/data-and-tools/labeled-graph-format.
