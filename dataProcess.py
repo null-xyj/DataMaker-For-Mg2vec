@@ -28,7 +28,7 @@ with open(mgFilename, 'r') as f:
             mg.coreList = list()
         elif line[0] == 'T':
             for t in range(len(line[1:])):
-                if line[t+1] == '1':
+                if line[t + 1] == '1':
                     mg.coreList.append(t)
         elif line[0] == 'E':
             for s in range(1, len(line), 2):
@@ -37,10 +37,14 @@ with open(mgFilename, 'r') as f:
             mg.frequency = int(line[1])
             mgs.append(mg)
 
-# for mg in mgs:
-#     print(mg.coreList)
+ps = set()
+with open('tem/pair_catch.txt', 'r') as f:
+    for line in f:
+        line = line.split()
+        ps.add((int(line[0]), int(line[1])))
+        ps.add((int(line[1]), int(line[0])))
 
-with open(r"tem/res1.txt", 'w') as fout:
+with open(r"res.txt", 'w') as fout:
     cnt = 0
     for mg in mgs:
         filename = instanceFilename + str(mg.num)
@@ -59,16 +63,17 @@ with open(r"tem/res1.txt", 'w') as fout:
                         for j in range(i, core_num):
                             x = core_nodes[i]
                             y = core_nodes[j]
-                            if x == y:
-                                if (x, x) in pair_dict:
-                                    pair_dict[(x, x)] += 1
+                            if (x, y) in ps:
+                                if x == y:
+                                    if (x, x) in pair_dict:
+                                        pair_dict[(x, x)] += 1
+                                    else:
+                                        pair_dict[(x, x)] = 1
                                 else:
-                                    pair_dict[(x, x)] = 1
-                            else:
-                                if (x, y) in pair_dict:
-                                    pair_dict[(x, y)] += 1
-                                else:
-                                    pair_dict[(x, y)] = 1
+                                    if (x, y) in pair_dict:
+                                        pair_dict[(x, y)] += 1
+                                    else:
+                                        pair_dict[(x, y)] = 1
 
                 for key, val in pair_dict.items():
                     x = key[0]

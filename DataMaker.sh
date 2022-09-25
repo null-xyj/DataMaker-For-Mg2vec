@@ -9,12 +9,9 @@ cd ..
 mkdir output
 cd symiso
 ./symiso data=../Datasets/dblp.lg query=../tem/t2.q subgraph=../tem/t.gdb stats=../output
+cd ../randomWalkSampler
+python randomWalk.py
 cd ..
 python dataProcess.py
-cd randomWalkSampler
-python randomWalk.py
-python sampler.py
-rm -f pair_catch.txt
-cd ..
 rm -rf output
 rm -rf tem
