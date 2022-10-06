@@ -78,6 +78,7 @@ with open(r"res.txt", 'w') as fout:
                 for key, val in pair_dict.items():
                     x = key[0]
                     y = key[1]
+                    val = np.around(np.log(int(line[3][1:]) + 1), 4)
                     toWrite = str(x) + ' ' + str(y)
                     toWrite += (' m' + str(mg.num))
                     toWrite += (' f' + str(val) + '\n')
