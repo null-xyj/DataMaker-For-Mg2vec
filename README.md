@@ -14,7 +14,7 @@ After we have prepared the file in proper format, just put the file in the Datas
 ### 2. What environment we should prepare
 
 1. Linux Operation System
-2. A jdk to execute java program (Grami and SymISO)
+2. A jre to execute java program (Grami and SymISO)
 3. Python3 with DGL library
 
 ### 3. How to use our tool
